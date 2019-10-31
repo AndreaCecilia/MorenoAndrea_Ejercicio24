@@ -22,16 +22,17 @@ float r;
 float alpha;
 float x;
 int i;
+float pi = 2.0*asin(1.0);
 for (i=1; i<N;i++){
 		b=drand48()-0.5*delta;
         propuesta  = lista + b;
-		g1=exp(-propuesta*propuesta/(2.0*sigma*sigma))/sqrt(2.0*np.pi*sigma*sigma);
-		g2=exp(-lista**2/(2.0*sigma**2))/sqrt(2.0*np.pi*sigma**2);
+		g1=exp(-propuesta*propuesta/(2.0*sigma*sigma))/sqrt(2.0*pi*sigma*sigma);
+		g2=exp(-lista*lista/(2.0*sigma*sigma))/sqrt(2.0*pi*sigma*sigma);
 		cociente=g1/g2;
 		if(cociente<1){
 			r=cociente;
-		
-		else{r=1}
+		}
+		else{r=1;}
         alpha = drand48();
         if(alpha<r){
             x=propuesta;}
